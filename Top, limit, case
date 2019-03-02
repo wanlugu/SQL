@@ -1,4 +1,4 @@
-###### n-th highest value
+###### n-th value, but not the n-th smallest
 ## limit n, only show first n
 ## limit n, m  shows n+1 to n+m records
 Select 
@@ -7,9 +7,19 @@ From Employee
 Order by Salary Desc
 Limit 1, 1), null) AS SecondHighestSalary;
 
+### the first one
+SELECT PRO_NAME, PRO_PRICE
+FROM item_mast
+ORDER BY PRO_PRICE 
+LIMIT 1;
 
+#### the cheapest 
+SELECT pro_name, pro_price
+   FROM item_mast
+   WHERE pro_price = 
+    (SELECT MIN(pro_price) FROM item_mast);
 
-## ORDER by subject and winner, with 'Economics', 'Chemistry' at bottom
+#### ORDER by subject and winner, with 'Economics', 'Chemistry' at bottom
 SELECT *
 FROM nobel_win 
 WHERE YEAR =1970
