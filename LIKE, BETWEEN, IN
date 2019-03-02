@@ -14,11 +14,8 @@ From nobel_win
 WHERE WINNER LIKE "Louis%"; ## first name as Louis
 
 
-
-
-
-
 ################### BETWEEN VAL1 AND VAL2
+################### NOT BETWEEN, NOT IN
 SELECT * FROM Products
 WHERE (Price BETWEEN 10 AND 20)
 AND NOT CategoryID IN (1,2,3);
