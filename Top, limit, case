@@ -1,0 +1,20 @@
+###### n-th highest value
+## limit n, only show first n
+## limit n, m  shows n+1 to n+m records
+Select 
+ifnull ((Select Distinct Salary
+From Employee
+Order by Salary Desc
+Limit 1, 1), null) AS SecondHighestSalary;
+
+
+
+## ORDER by subject and winner, with 'Economics', 'Chemistry' at bottom
+SELECT *
+FROM nobel_win 
+WHERE YEAR =1970
+ORDER BY 
+  CASE 
+    WHEN SUBJECT IN ('Economics', 'Chemistry') THEN 1
+    ELSE 0
+  END ASC , subject, Winner;

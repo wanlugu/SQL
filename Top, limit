@@ -1,8 +1,0 @@
-###### n-th highest value
-## limit n, only show first n
-## limit n, m  shows n+1 to n+m records
-Select 
-ifnull ((Select Distinct Salary
-From Employee
-Order by Salary Desc
-Limit 1, 1), null) AS SecondHighestSalary;
