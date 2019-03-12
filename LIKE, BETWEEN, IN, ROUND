@@ -16,6 +16,10 @@ WHERE WINNER LIKE "Louis%"; ## first name as Louis
 
 包含_符号，因为_本身代表了single character，所以需要escape
 SELECT * FROM testtable WHERE col1 LIKE '%/_%' ESCAPE '/';
+同理，包含/
+SELECT * FROM testtable WHERE col1 LIKE '%//%' ESCAPE '/';
+包含_/
+SELECT * FROM testtable WHERE col1 LIKE '%/_//%' ESCAPE '/';
 
 ################### BETWEEN VAL1 AND VAL2 ###########
 ################### NOT BETWEEN, NOT IN ###########
