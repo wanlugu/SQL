@@ -16,10 +16,15 @@ WHERE WINNER LIKE "Louis%"; ## first name as Louis
 
 ################### BETWEEN VAL1 AND VAL2 ###########
 ################### NOT BETWEEN, NOT IN ###########
+数值在范围内
 SELECT * FROM Products
 WHERE (Price BETWEEN 10 AND 20)
 AND NOT CategoryID IN (1,2,3);
 
+姓名首字母在A-K范围内
+SELECT *
+FROM salesman
+WHERE name BETWEEN 'A' and 'L';
 
 ################ Select purchase amount > 50% of target value ###########
 SELECT ord_no, purch_amt,
