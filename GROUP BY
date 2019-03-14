@@ -1,16 +1,20 @@
 # show the average price for items in each company
+列出每个pro_com的pro_price的平均值
 SELECT AVG(PRO_PRICE), PRO_COM 
   FROM item_mast
 GROUP BY PRO_COM;
 
-
+列出每个pro_com的pro_price个数
 SELECT COUNT(PRO_PRICE), PRO_COM 
   FROM item_mast
 GROUP BY PRO_COM;
 
+每个order date, 客户的id以及他们的最大purchase amount
+SELECT customer_id,ord_date,MAX(purch_amt) 
+FROM orders 
+GROUP BY customer_id,ord_date;
 
-### group with join
-
+############ group with join ############
 Below is a selection from the "Orders" table in the Northwind sample database:
 
 OrderID	CustomerID	EmployeeID	OrderDate	ShipperID
