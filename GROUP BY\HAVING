@@ -14,6 +14,14 @@ SELECT customer_id,ord_date,MAX(purch_amt)
 FROM orders 
 GROUP BY customer_id,ord_date;
 
+只列出最大消费大于2000的客户ID，日期和最大消费之
+SELECT customer_id, ord_date, MAX(purch_amt)
+FROM orders
+GROUP BY customer_id, ord_date
+HAVING MAX(purch_amt)>2000;
+普通row data用where,对于aggregated data用having
+
+
 ############ group with join ############
 Below is a selection from the "Orders" table in the Northwind sample database:
 
