@@ -1,0 +1,12 @@
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+
+Update salary
+SET sex = replace('fm',sex,'');
+
+Update salary
+SET sex = CASE sex
+        WHEN 'm' then 'f'
+        ELSE 'm';
