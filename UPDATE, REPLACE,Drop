@@ -10,3 +10,10 @@ Update salary
 SET sex = CASE sex
         WHEN 'm' then 'f'
         ELSE 'm';
+
+
+Drop column A
+From table;
+
+Delete from table
+Where condition;
