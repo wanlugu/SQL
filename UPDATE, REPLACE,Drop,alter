@@ -16,8 +16,8 @@ SET sex = CASE sex
         ELSE 'm';
 
 /* drop and existing col*/
-Drop column A
-From table;
+alter table tablename
+Drop column A;
 
 
 /* delete rows*/
