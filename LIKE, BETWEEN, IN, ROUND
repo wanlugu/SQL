@@ -1,0 +1,41 @@
+########################## LIKE ###########
+基本规则
+% - The percent sign represents zero, one, or multiple characters
+_ - The underscore represents a single character
+WHERE CustomerName LIKE 'a%'	Finds any values that start with "a"
+WHERE CustomerName LIKE '%a'	Finds any values that end with "a"
+WHERE CustomerName LIKE '%or%'	Finds any values that have "or" in any position
+WHERE CustomerName LIKE '_r%'	Finds any values that have "r" in the second position
+WHERE CustomerName LIKE 'a_%_%'	Finds any values that start with "a" and are at least 3 characters in length
+WHERE ContactName LIKE 'a%o'	Finds any values that start with "a" and ends with "o"
+
+名字开头是Louis
+SELECT *
+From nobel_win
+WHERE WINNER LIKE "Louis%"; ## first name as Louis
+
+包含_符号，因为_本身代表了single character，所以需要escape
+SELECT * FROM testtable WHERE col1 LIKE '%/_%' ESCAPE '/';
+同理，包含/
+SELECT * FROM testtable WHERE col1 LIKE '%//%' ESCAPE '/';
+包含_/
+SELECT * FROM testtable WHERE col1 LIKE '%/_//%' ESCAPE '/';
+
+################### BETWEEN VAL1 AND VAL2 ###########
+################### NOT BETWEEN, NOT IN ###########
+数值在范围内
+SELECT * FROM Products
+WHERE (Price BETWEEN 10 AND 20)
+AND NOT CategoryID IN (1,2,3);
+
+姓名首字母在A-K范围内
+SELECT *
+FROM salesman
+WHERE name BETWEEN 'A' and 'L';
+
+################ Select purchase amount > 50% of target value ###########
+SELECT ord_no, purch_amt,
+ROUND( (purch_amt*100)/6000,2) AS "Achieved %",
+((6000-purch_amt)*100)/6000 AS "Unachieved %"
+FROM orders
+WHERE (100*purch_amt)/6000>50;
